@@ -29,7 +29,7 @@ default: &default
 ```
 #### db:create
 ```
-$ docker-compose run web bundle install
+$ docker-compose build
 $ docker-compose run web rake db:create
 Starting dockerrailsmysql_db_data_1
 Created database 'myapp_development'
