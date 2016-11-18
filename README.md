@@ -1,5 +1,5 @@
 # docker-rails-mysql
-rails and mysql with docker-compose with data volume container
+rails and mysql by docker-compose with data volume container
 
 ## 構成
 
