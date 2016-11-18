@@ -1,0 +1,21 @@
+version: '2'
+services:
+  db_data:
+    image: busybox
+    volumes:
+      - /var/lib/mysql
+  db:
+    image: mysql:5.7
+    volumes_from:
+      - db_data
+    environment:
+        MYSQL_ROOT_PASSWORD: testpassword
+  web:
+    build: .
+    command: bundle exec rails s -p 3000 -b '0.0.0.0'
+    volumes:
+      - .:/myapp
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
